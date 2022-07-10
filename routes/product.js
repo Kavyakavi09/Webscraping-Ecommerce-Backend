@@ -40,20 +40,5 @@ route.get('/mobiles', (req, res) => {
   }
 });
 
-//to get products based on search
-// route.get('/search-mobile', async (req, res) => {
-//   try {
-//     var search = req.query.search;
-//     const product_data = await productData.find({
-//       title: { $regex: '.*' + search + '.*', $options: 'i' },
-//     });
-//     if (product_data.length > 0) {
-//       res.status(200).json({ message: 'product details', data: product_data });
-//     } else {
-//       res.status(200).json({ message: 'product not found' });
-//     }
-//   } catch (error) {
-//     return res.status(403).json({ message: error.message });
-//   }
-// });
+
 module.exports = route;
