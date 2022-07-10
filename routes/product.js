@@ -2,6 +2,10 @@ const route = require('express').Router();
 const productData = require('../models/products');
 
 //to get paginated get api.
+route.get('/', (request, response) => {
+  response.send('Welcome to my web scrapping app😊');
+});
+
 route.get('/mobiles', (req, res) => {
   try {
     let { page, size } = req.query;
