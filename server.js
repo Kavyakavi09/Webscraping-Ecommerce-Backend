@@ -12,6 +12,9 @@ app.use(express.json());
 // dotenv environment setup
 require('dotenv').config();
 
+//to allow every application
+app.use(cors());
+
 // connect to the database
 server = async () => {
   await connect();
@@ -23,9 +26,6 @@ server = async () => {
     await scrapData();
     console.log('data reseted sucessfully');
   }, 43200 * 1000);
-
-  //to allow every application
-  app.use(cors());
 
   app.use((req, res, next) => {
     console.log('logging middleware');
