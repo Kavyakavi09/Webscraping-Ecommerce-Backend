@@ -28,7 +28,11 @@ route.get('/mobiles', (req, res) => {
           if (err) {
             res.status(403).json('product not found');
           } else {
-            res.status(200).json({ page, size, data: data });
+            res.status(200).json({
+              page,
+              size,
+              data: data,
+            });
           }
         }
       )
@@ -39,6 +43,5 @@ route.get('/mobiles', (req, res) => {
     console.log('something went wrong', error);
   }
 });
-
 
 module.exports = route;
